@@ -24,7 +24,7 @@ void gotoxy(int x, int y) {
 
 void setcursor(bool visible, DWORD size){
     if (size == 0) {
-        size = 20; // default cursor size Changing to numbers from 1 to 20, decreases cursor width
+        size = 20; 
     }
     CONSOLE_CURSOR_INFO lpCursor;
     lpCursor.bVisible = visible;
@@ -37,8 +37,8 @@ void init() {
     gameover = 0;
     gotoxy(3, 2); cout<<"SCORE : ";
     for (int i = 0; i < 79; i++){
-    	gotoxy(1+i, 1); cout<<"ß";
-    	gotoxy(1+i, 25); cout<<"ß";
+    	gotoxy(1+i, 1); cout<<"ÃŸ";
+    	gotoxy(1+i, 25); cout<<"ÃŸ";
 	} 
 }
 
@@ -52,36 +52,36 @@ void moveDino(int jump = 0) {
     else dinoY++;
 
     gotoxy(dinoPos, 15 - dinoY);cout<<"                 ";
-    gotoxy(dinoPos, 16 - dinoY);cout<<"         ÜÛßÛÛÛÛÜ";
-    gotoxy(dinoPos, 17 - dinoY);cout<<"         ÛÛÛÛÛÛÛÛ";
-    gotoxy(dinoPos, 18 - dinoY);cout<<"         ÛÛÛÛÛßßß";
-    gotoxy(dinoPos, 19 - dinoY);cout<<" Û      ÜÛÛÛÛßßß ";
-    gotoxy(dinoPos, 20 - dinoY);cout<<" ÛÛÜ  ÜÛÛÛÛÛÛÜÜÜ ";
-    gotoxy(dinoPos, 21 - dinoY);cout<<" ßÛÛÛÛÛÛÛÛÛÛÛ  ß ";
-    gotoxy(dinoPos, 22 - dinoY);cout<<"   ßÛÛÛÛÛÛÛß     ";
+    gotoxy(dinoPos, 16 - dinoY);cout<<"         ÃœÃ›ÃŸÃ›Ã›Ã›Ã›Ãœ";
+    gotoxy(dinoPos, 17 - dinoY);cout<<"         Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›";
+    gotoxy(dinoPos, 18 - dinoY);cout<<"         Ã›Ã›Ã›Ã›Ã›ÃŸÃŸÃŸ";
+    gotoxy(dinoPos, 19 - dinoY);cout<<" Ã›      ÃœÃ›Ã›Ã›Ã›ÃŸÃŸÃŸ ";
+    gotoxy(dinoPos, 20 - dinoY);cout<<" Ã›Ã›Ãœ  ÃœÃ›Ã›Ã›Ã›Ã›Ã›ÃœÃœÃœ ";
+    gotoxy(dinoPos, 21 - dinoY);cout<<" ÃŸÃ›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›Ã›  ÃŸ ";
+    gotoxy(dinoPos, 22 - dinoY);cout<<"   ÃŸÃ›Ã›Ã›Ã›Ã›Ã›Ã›ÃŸ     ";
     gotoxy(dinoPos, 23 - dinoY);
 
     if (jump == 1 || jump == 2) {
-        cout<<"    ÛÛß ßÛ       ";
+        cout<<"    Ã›Ã›ÃŸ ÃŸÃ›       ";
         gotoxy(2, 24 - dinoY);
-        cout<<"    ÛÜ   ÛÜ      ";
+        cout<<"    Ã›Ãœ   Ã›Ãœ      ";
     } 
 	else if (foot == 0) {
-        cout<<"    ßÛÛß  ßßß    ";
+        cout<<"    ÃŸÃ›Ã›ÃŸ  ÃŸÃŸÃŸ    ";
         gotoxy(2, 24 - dinoY);
-        cout<<"      ÛÜ         ";
+        cout<<"      Ã›Ãœ         ";
         foot = !foot;
     } 
 	else if (foot == 1) {
-        cout<<"     ßÛÜ ßÛ      ";
+        cout<<"     ÃŸÃ›Ãœ ÃŸÃ›      ";
         gotoxy(2, 24 - dinoY);
-        cout<<"          ÛÜ     ";
+        cout<<"          Ã›Ãœ     ";
         foot = !foot;
     }
     
     gotoxy(2, 25 - dinoY);
     if (jump == 0) {
-        cout<<"ßßßßßßßßßßßßßßßßß";
+        cout<<"ÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸÃŸ";
     } else {
         cout<<"                ";
     } 
@@ -98,11 +98,11 @@ void drawHurdle() {
         gameover = 1; 
     }
     
-    gotoxy(hurdlePos - plantX, 20);cout<<"  Û   ";
-    gotoxy(hurdlePos - plantX, 21);cout<<"Û Û Û ";
-    gotoxy(hurdlePos - plantX, 22);cout<<"Û Û Û ";
-    gotoxy(hurdlePos - plantX, 23);cout<<" ßÛß  ";
-    gotoxy(hurdlePos - plantX, 24);cout<<"  Û   ";
+    gotoxy(hurdlePos - plantX, 20);cout<<"  Ã›   ";
+    gotoxy(hurdlePos - plantX, 21);cout<<"Ã› Ã› Ã› ";
+    gotoxy(hurdlePos - plantX, 22);cout<<"Ã› Ã› Ã› ";
+    gotoxy(hurdlePos - plantX, 23);cout<<" ÃŸÃ›ÃŸ  ";
+    gotoxy(hurdlePos - plantX, 24);cout<<"  Ã›   ";
      
     plantX++;
     
